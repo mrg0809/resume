@@ -117,6 +117,7 @@ class Blog(models.Model):
     description = models.CharField(max_length=200, blank=True, null=True)
     body = RichTextField(blank=True, null=True)
     slug = models.SlugField(null=True, blank=True)
+    is_active = models.BooleanField(default=True)
 
     def save(self, *args, **kwargs):
         if not self.id:
